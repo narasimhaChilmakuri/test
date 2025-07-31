@@ -14,6 +14,7 @@ public class UsersService {
     public UsersRepo usersRepo;
 
     public Users register(Users user) {
+        System.out.println("Registering user: " + user.getUsername());
         return usersRepo.save(user);
     }
 
