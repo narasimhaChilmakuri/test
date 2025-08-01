@@ -18,7 +18,7 @@ public class UserController {
 
     @GetMapping("/r1")
     public String welcome() {
-        return "Welcome to the User Registration Service!";
+        return "Welcome";
     }
 
     @PostMapping("/register")
