@@ -46,10 +46,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(requests -> requests.anyRequest().authenticated())
+                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers("login","register").permitAll()
+                        .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .httpBasic(Customizer.withDefaults())
-                .authenticationProvider(authenticationProvider()) // ✅ THIS IS CRITICAL
+                .authenticationProvider(authenticationProvider())
                 .build();
     }
 }

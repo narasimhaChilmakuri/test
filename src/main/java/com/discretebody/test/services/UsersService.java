@@ -24,4 +24,7 @@ public class UsersService {
     }
 
 
+    public String verify(Users user) {
+        return "";
+    }
 }

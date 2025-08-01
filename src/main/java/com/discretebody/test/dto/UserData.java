@@ -23,7 +23,7 @@ public class UserData implements UserDetails {
 
     @Override
     public String getPassword() {
-        return "{noop}" + user.getPassword();
+        return  user.getPassword();
     }
 
     @Override
